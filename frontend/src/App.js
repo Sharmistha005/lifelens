@@ -6,7 +6,7 @@ import {
   CartesianGrid, Area, AreaChart, LineChart, Line
 } from "recharts";
 
-const API = "http://127.0.0.1:5000";
+const API = "https://lifelens-y6wx.onrender.com";
 
 const CHART_COLORS = [
   "#6366F1", "#8B5CF6", "#EC4899", "#F59E0B",
