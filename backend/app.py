@@ -34,8 +34,17 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 print(f"SECRET_KEY loaded: {bool(os.getenv('SECRET_KEY'))}")
 
 # Enable CORS
-CORS(app, origins=["http://localhost:3000", "http://127.0.0.1:3000", "http://localhost:5173"])
-
+CORS(app, 
+     origins=[
+        "http://localhost:3000", 
+        "http://127.0.0.1:3000", 
+        "http://localhost:5173",
+        "https://lifelens-zeta.vercel.app"
+    ],
+    allow_headers=['Content-Type', 'Authorization'],
+    methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    supports_credentials=True
+)
 # MongoDB Connection
 MONGO_URI = os.getenv("MONGO_URI")
 print(f"MONGO_URI loaded: {bool(MONGO_URI)}")
